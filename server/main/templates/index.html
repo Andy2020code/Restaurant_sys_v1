@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/kum5dyg.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Index | Home</title>
+</head>
+<body>
+
+    <div class="div-01-layout">
+        <div class="div-01-body">
+
+            <div class="nav-bar-top">
+
+                <div class="logo-top-left">
+                    <h1>RIO<br>STAKEHOUSE</h1>
+                </div>
+
+                <div class="devider-vertical-top"></div>
+
+                <div class="search-box-top">
+                    <input type="text" placeholder="Buscar Item...">
+                    <button type="submit">
+                        <img src="{% static 'IMG/nav-bar-top/search.png' %}" alt="">
+                    </button>
+                </div>
+
+                <div class="devider-vertical-top"></div>
+
+                <div class="tools-top-right">
+
+                    <img src="{% static 'IMG/nav-bar-top/wifi.png' %}" alt="">
+                    <img src="{% static 'IMG/nav-bar-top/loop.png' %}" alt="">
+
+                    <button type="submit">Selecionar<br>Mesa</button>
+                    
+                </div>
+            </div>
+
+            <div class="side-viewport-div">
+                <div class="nav-bar-side">
+
+                    <div class="home-btn">
+                        <img src="{% static 'IMG/nav-bar-side/home.png' %}" alt="">
+                        <h1>HOME</h1>
+                    </div>
+    
+    
+                    <div class="menu-btn">
+                        <img src="{% static 'IMG/nav-bar-side/menu.png' %}" alt="">
+                        <h1>MENU</h1>
+                    </div>
+
+                    <div class="lunch-btn">
+                        <img src="{% static 'IMG/nav-bar-side/dinner.png' %}" alt="">
+                        <h1>ALMOÇO</h1>
+                    </div>
+
+                    <div class="drinks-btn">
+                        <img src="{% static 'IMG/nav-bar-side/cocktail.png' %}" alt="">
+                        <h1>BEBIBAS</h1>
+                    </div>
+
+                    <div class="dessert-btn">
+                        <img src="{% static 'IMG/nav-bar-side/cupcake.png' %}" alt="">
+                        <h1>Sobre<br>Mesas</h1>
+                    </div>
+    
+                </div>
+    
+                <div class="viewport-div">
+
+                    <div class="option-label">
+                        <h1>Favoritos</h1>
+                    </div>
+
+                    
+                    <div class="options-div">
+                        {% for item in menu_items %}
+                            <div class="option">
+                                <h1 class="option-item">{{item.item_name}}</h1>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    
+
+                    <div class="option-label">
+                        <h1>FILA DA COZINHA</h1>
+                    </div>
+
+                    <div class="kitchen-line-div">
+                        <div class="kitchen position-01">
+                            <h1>MESA 10</h1>
+                            <button>VER PEDIDOS</button>
+                        </div>
+    
+                        <div class="kitchen position-02">
+                            <h1>MESA 22</h1>
+                            <button>VER PEDIDOS</button>
+                        </div>
+    
+                        <div class="kitchen position-03">
+                            <h1>MESA 14</h1>
+                            <button>VER PEDIDOS</button>
+                        </div>
+
+                        <div class="kitchen position-04">
+                            <h1>MESA 11</h1>
+                            <button>VER PEDIDOS</button>
+                        </div>
+
+                        <div class="kitchen position-05">
+                            <h1>MESA 34</h1>
+                            <button>VER PEDIDOS</button>
+                        </div>
+                    </div>
+
+                    <div class="option-label">
+                        <h1>FILA DOS SUCOS</h1>
+                    </div>
+
+                    <div class="drinks-line-div">
+                        <div class="kitchen position-01">
+                            <h1>MESA 30</h1>
+                            <button>VER SUCOS</button>
+                        </div>
+    
+                        <div class="drinks position-02">
+                            <h1>MESA 04</h1>
+                            <button>VER SUCOS</button>
+                        </div>
+    
+                        <div class="drinks position-03">
+                            <h1>MESA 28</h1>
+                            <button>VER SUCOS</button>
+                        </div>
+                    </div>
+
+                    <div class="option-label">
+                        <h1>FILA DO BAR</h1>
+                    </div>
+
+                    <div class="bar-line-div">
+                        <div class="bar position-01">
+                            <h1>MESA 11</h1>
+                            <button>VER BEBIBAS</button>
+                        </div>
+    
+                        <div class="bar position-02">
+                            <h1>MESA 44</h1>
+                            <button>VER BEBIBAS</button>
+                        </div>
+    
+                        <div class="bar position-03">
+                            <h1>MESA 58</h1>
+                            <button>VER BEBIBAS</button>
+                        </div>
+
+                        <div class="bar position-04">
+                            <h1>MESA 01</h1>
+                            <button>VER BEBIBAS</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="floatingDiv" class="floatingDiv">
+
+        <div class="exit-btn-01">
+            <img id="closeButton" src="{% static 'IMG/floating-div/exit.png' %}" alt="">
+        </div>
+
+        <div class="about-item">
+            <h1 class="menu-item"></h1>
+        </div>
+
+        <div class="item-price">
+            
+            <div class="weekday-item-promotion">
+                <h1>Segunda a Sexta</h1>
+                <p>$19.99</p>
+                <button>Adicionar</button>
+            </div>
+
+            <div class="devider-vertical-floating-div"></div>
+
+            <div class="weekend-item-promotion">
+                <h1>Sabado a Domingo</h1>
+                <p>$25.99</p>
+                <button>Adicionar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="{% static 'js/js_01.js' %}"></script>
+    
+</body>
+</html>
