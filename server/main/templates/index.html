@@ -35,7 +35,7 @@
                     <img src="{% static 'IMG/nav-bar-top/wifi.png' %}" alt="">
                     <img src="{% static 'IMG/nav-bar-top/loop.png' %}" alt="">
 
-                    <button type="submit">Selecionar<br>Mesa</button>
+                    <button type="submit" id="select-table-btn">Selecionar<br>Mesa</button>
                     
                 </div>
             </div>
@@ -43,23 +43,23 @@
             <div class="side-viewport-div">
                 <div class="nav-bar-side">
 
-                    <div class="home-btn">
+                    <div class="home-btn" id="home-btn">
                         <img src="{% static 'IMG/nav-bar-side/home.png' %}" alt="">
                         <h1>HOME</h1>
                     </div>
     
     
-                    <div class="menu-btn">
+                    <div class="menu-btn" id="menu-btn">
                         <img src="{% static 'IMG/nav-bar-side/menu.png' %}" alt="">
                         <h1>MENU</h1>
                     </div>
 
-                    <div class="lunch-btn">
+                    <div class="lunch-btn" id="lunch-btn">
                         <img src="{% static 'IMG/nav-bar-side/dinner.png' %}" alt="">
                         <h1>ALMOÇO</h1>
                     </div>
 
-                    <div class="drinks-btn">
+                    <div class="drinks-btn" id="drinks-btn">
                         <img src="{% static 'IMG/nav-bar-side/cocktail.png' %}" alt="">
                         <h1>BEBIBAS</h1>
                     </div>
@@ -71,7 +71,7 @@
     
                 </div>
     
-                <div class="viewport-div">
+                <div class="viewport-div" id="viewport-div">
 
                     <div class="option-label">
                         <h1>Favoritos</h1>
@@ -166,6 +166,160 @@
                     </div>
 
                 </div>
+
+                <div class="viewport-div-01" id="viewport-div-01">
+
+                    <div class="complete-menu-label">
+                        <h1>Appetizers</h1>
+                    </div>
+
+                    
+                    <div class="complete-menu-options">
+                        {% for item in appetizers_menu %}
+                            <div class="menu-option">
+                                <h1 class="menu-option-item">{{item.option_name}}</h1>
+                                <p class="menu-option-price">${{item.option_price}}</p>
+                                <button>Adicionar</button>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="complete-menu-label">
+                        <h1>Sandwiches</h1>
+                    </div>
+
+                    
+                    <div class="complete-menu-options">
+                        {% for item in sandwiches_menu %}
+                            <div class="menu-option">
+                                <h1 class="menu-option-item">{{item.option_name}}</h1>
+                                <p class="menu-option-price">${{item.option_price}}</p>
+                                <button>Adicionar</button>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="complete-menu-label">
+                        <h1>Salgados</h1>
+                    </div>
+
+                    
+                    <div class="complete-menu-options">
+                        {% for item in salgados_menu %}
+                            <div class="menu-option">
+                                <h1 class="menu-option-item">{{item.option_name}}</h1>
+                                <p class="menu-option-price">${{item.option_price}}</p>
+                                <button>Adicionar</button>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="complete-menu-label">
+                        <h1>Tapiocas</h1>
+                    </div>
+
+                    
+                    <div class="complete-menu-options">
+                        {% for item in tapiocas_menu %}
+                            <div class="menu-option">
+                                <h1 class="menu-option-item">{{item.option_name}}</h1>
+                                <p class="menu-option-price">${{item.option_price}}</p>
+                                <button>Adicionar</button>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="complete-menu-label">
+                        <h1>Deserts</h1>
+                    </div>
+
+                    <div class="complete-menu-options">
+                        {% for item in deserts_menu %}
+                            <div class="menu-option">
+                                <h1 class="menu-option-item">{{item.option_name}}</h1>
+                                <p class="menu-option-price">${{item.option_price}}</p>
+                                <button>Adicionar</button>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+
+                <div class="viewport-div-02" id="viewport-div-02">
+
+                    <div class="complete-menu-label">
+                        <h1>Almoço</h1>
+                    </div>
+
+                    
+                    <div class="complete-menu-options">
+                        {% for item in lunch_menu %}
+                            <div class="menu-option">
+                                <h1 class="menu-option-item">{{item.option_name}}</h1>
+                                <p class="menu-option-price">${{item.option_price}}</p>
+                                <button>Adicionar</button>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+
+                <div class="viewport-div-03" id="viewport-div-03">
+
+                    <div class="complete-menu-label">
+                        <h1>Sucos</h1>
+                    </div>
+
+                    
+                    <div class="complete-menu-options">
+                        {% for item in juices_menu %}
+                            <div class="menu-option">
+                                <h1 class="menu-option-item">{{item.option_name}}</h1>
+                                <p class="menu-option-price">${{item.option_price}}</p>
+                                <button>Adicionar</button>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="complete-menu-label">
+                        <h1>Sodas</h1>
+                    </div>
+
+                    
+                    <div class="complete-menu-options">
+                        {% for item in sodas_menu %}
+                            <div class="menu-option">
+                                <h1 class="menu-option-item">{{item.option_name}}</h1>
+                                <p class="menu-option-price">${{item.option_price}}</p>
+                                <button>Adicionar</button>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+
+                <div class="order-floating-div" id="order-floating-div">
+                    <div class="order-floatng-div-body">
+                        <div class="order-div-title">
+                            <h1>Ordem Mesa</h1>
+                        </div>
+
+                        <div class="table-number-checkout">
+                            <h1>Mesa 10</h1>
+                        </div>
+
+                        <div class="order-contents">
+                            
+                            <h1></h1>
+                        </div>
+            
+                        <div class="send-btn">
+                            <button>Mandar</button>
+                        </div>
+            
+            
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -182,10 +336,12 @@
         </div>
 
         <div class="item-price">
-            
+
             <div class="weekday-item-promotion">
                 <h1>Segunda a Sexta</h1>
-                <p>$19.99</p>
+
+                <p class="weekday-price" id="weekday-price"></p>
+
                 <button>Adicionar</button>
             </div>
 
@@ -193,12 +349,16 @@
 
             <div class="weekend-item-promotion">
                 <h1>Sabado a Domingo</h1>
-                <p>$25.99</p>
+
+                <p class="weekend-price" id="weekend-price"></p>
+
                 <button>Adicionar</button>
             </div>
 
         </div>
     </div>
+
+
 
     <script src="{% static 'js/js_01.js' %}"></script>
     
